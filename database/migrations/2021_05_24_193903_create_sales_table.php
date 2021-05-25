@@ -17,12 +17,11 @@ class CreateSalesTable extends Migration
             $table->id();
             $table->foreignId('employee_id')->constrained()->onDelete('cascade');
             $table->string('sutarties_nr');
-            $table->string('rekomendacija');
             $table->tinyInteger('rekomendacija');
             $table->tinyInteger('greitis');
             $table->tinyInteger('aptarnavimas');
             $table->text('pastabos');
-            $table->boolean('sutikimas');
+            $table->boolean('sutikimas')->default(false);
             $table->timestamps();
         });
     }

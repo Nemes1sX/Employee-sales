@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreSaleRequest;
+use App\Models\Employee;
 use App\Models\Sales;
 use Illuminate\Http\Request;
 
@@ -14,7 +16,9 @@ class SalesController extends Controller
      */
     public function index()
     {
-        //
+        $sales = Sales::with('employee')->paginate(15);
+
+        return view('sales.index', compact('sales'));
     }
 
     /**
@@ -24,7 +28,9 @@ class SalesController extends Controller
      */
     public function create()
     {
-        //
+        $employees = Employee::all();
+
+        return view('sales.create', compact('employees'));
     }
 
     /**
@@ -33,9 +39,11 @@ class SalesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreSaleRequest $request)
     {
-        //
+        Sales::create($request->validated());
+
+        return redirect()->route('sales.index')->with('success', 'Aptarnavimo raportas išsaugotas');
     }
 
     /**

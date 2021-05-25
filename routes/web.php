@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', 'sales/index');
+Route::resource('sales', App\Http\Controllers\SalesController::class)
+    ->only('index', 'create', 'store');
