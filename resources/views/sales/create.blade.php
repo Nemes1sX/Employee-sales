@@ -33,21 +33,21 @@
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label for="aptarnavimas">{{ __('Kaip vertinate aptarnavimo kokybę?') }}</label>
+                                            <label for="sutarties_nr">{{ __('Kaip vertinate aptarnavimo greitį?') }}</label>
                                             <br/>
-                                            @for ($i = 1; $i<=10; $i++)
-                                                <label class="form-check-label" for="{{$i}}">{{ $i }}</label>
-                                                <input name="aptarnavimas" value="{{ $i }}" type="radio">
+                                            @for($i = 1; $i <= 10; $i++)
+                                                <label class="form-check-label" for="{{ $i }}">{{ $i }}</label>
+                                                <input name="greitis" value="{{ $i}}"  type="radio">
                                             @endfor
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
                                         <div class="form-group">
-                                            <label for="sutarties_nr">{{ __('Kaip vertinate aptarnavimo greitį?') }}</label>
+                                            <label for="aptarnavimas">{{ __('Kaip vertinate aptarnavimo kokybę?') }}</label>
                                             <br/>
-                                             @for($i = 1; $i <= 10; $i++)
-                                                <label class="form-check-label" for="{{ $i }}">{{ $i }}</label>
-                                                <input name="greitis" value="{{ $i}}"  type="radio">
+                                            @for ($i = 1; $i<=10; $i++)
+                                                <label class="form-check-label" for="{{$i}}">{{ $i }}</label>
+                                                <input name="aptarnavimas" value="{{ $i }}" type="radio">
                                             @endfor
                                         </div>
                                     </div>
@@ -70,15 +70,19 @@
                                     <div class="col-sm-12">
                                         <div class="form-group">
                                             <label for="sutikimas">{{ __('Ar galėsime šį Jūsų vertinimą panaudoti savo svetainėjear socialiniuose puslapiuose?') }}</label>
-                                            <input type="checkbox" name="sutikimas" value="1">
+                                            <br/>
+                                            <label for="taip">{{ __('Taip') }}</label>
+                                            <input type="radio" name="sutikimas" value="1">
+                                            <label for="taip">{{ __('Ne') }}</label>
+                                            <input type="radio" name="sutikimas" value="0">
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
                             <div class="card-footer text-center">
-                                <button class="btn btn-sm btn-primary" type="submit"> {{ __('Save') }}</button>
-                                <a class="btn btn-sm btn-danger" href="{{route('sales.index')}}">Grįžti į sąrašą</a>
+                                <button class="btn btn-sm btn-primary" type="submit"> {{ __('Užpildyti formą') }}</button>
+                                <a class="btn btn-sm btn-danger" href="{{route('sales.index')}}">{{__('Grįžti į sąrašą')}}</a>
                             </div>
                         </form>
                     </div>

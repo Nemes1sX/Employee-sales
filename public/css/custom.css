@@ -4,3 +4,16 @@
     min-width: 300px;
     max-width: 1200px;
 }
+.center-table {
+    margin-left: auto;
+    margin-right: auto;
+}
+.create-button {
+    padding-bottom: 10px;
+}
+.checked {
+    color: orange;
+}
+.alert-box {
+    margin: 0 auto;
+}

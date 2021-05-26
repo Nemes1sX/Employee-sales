@@ -29,6 +29,7 @@ class StoreSaleRequest extends FormRequest
             'greitis' => ['required', 'numeric', 'between:1,10'],
             'aptarnavimas' => ['required', 'numeric', 'between:1,10'],
             'pastabos' => ['required', 'string', 'min:10'],
+            'sutikimas' => ['required']
         ];
     }
 }
