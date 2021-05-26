@@ -25,8 +25,8 @@
                     <th>Aptarnavęs darbuotojas</th>
                     <th>Sutarties nr.</th>
                     <th>Greitis</th>
-                    <th>Rekomendacija</th>
                     <th>Aptarnavimas</th>
+                    <th>Rekomendacija</th>
                     <th>Pastabos</th>
                     <th>Sutikimas</th>
                 </tr>
